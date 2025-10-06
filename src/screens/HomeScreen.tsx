@@ -113,7 +113,7 @@ export default function HomeScreen({ navigation }: HomeScreenProps) {
           Halo, {username}!
         </Text>
         <PromoBanner />
-        <InfoCard number="0812-0000-0000" pulsaAwal={0} kuotaAwal={1} aktif="12 Oct 2025" />
+        <InfoCard number="0812-0000-0000" />
         <MenuGrid />
         <RecommendationList />
         <RecommendationList />

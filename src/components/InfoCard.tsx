@@ -1,10 +1,9 @@
-// src/components/InfoCard.js
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import usePulsa from '../Hooks/usePulsa';
 
-export default function InfoCard({ number, pulsaAwal, kuotaAwal, aktif }) {
-  const { pulsa, kuota, MasaAktif, isiPulsa, tambahKuota } = usePulsa(pulsaAwal, kuotaAwal);
+export default function InfoCard({ number }: { number: string }) {
+  const { pulsa, kuota, masaAktif, isiPulsa, tambahKuota } = usePulsa();
 
   return (
     <View style={styles.card}>
@@ -24,16 +23,16 @@ export default function InfoCard({ number, pulsaAwal, kuotaAwal, aktif }) {
         </View>
         <View style={styles.col}>
           <Text style={styles.label}>Masa Aktif</Text>
-          <Text style={styles.value}>{aktif}</Text>
+          <Text style={styles.value}>{masaAktif} hari</Text>
         </View>
       </View>
 
       {/* Tombol */}
       <View style={styles.actions}>
-        <TouchableOpacity style={styles.button} onPress={() => isiPulsa()}>
+        <TouchableOpacity style={styles.button} onPress={() => isiPulsa(10000)}>
           <Text style={styles.btnText}>Isi Pulsa</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => tambahKuota()}>
+        <TouchableOpacity style={styles.button} onPress={() => tambahKuota(1)}>
           <Text style={styles.btnText}>Tambah Kuota</Text>
         </TouchableOpacity>
       </View>

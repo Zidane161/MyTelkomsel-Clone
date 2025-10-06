@@ -18,9 +18,11 @@ const pulsaSlice = createSlice({
   reducers: {
     isiPulsa: (state, action: PayloadAction<number>) => {
       state.pulsa += action.payload;
+      state.masaAktif += 1;
     },
     tambahKuota: (state, action: PayloadAction<number>) => {
       state.kuota += action.payload;
+      state.masaAktif +=  2;
     },
     kurangiMasaAktif: (state, action: PayloadAction<number>) => {
       if (state.masaAktif > 0) {

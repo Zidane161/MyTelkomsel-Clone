@@ -68,7 +68,7 @@ export default function LoginScreen({ navigation }: Props) {
                 onPress={() => 
                   navigation.navigate('WebView', {
                     url: 'https://www.telkomsel.com/kebijakan-privasi',
-                    // title: 'Syarat & Ketentuan',
+                    title: 'Syarat & Ketentuan',
                   })
                 }>
             Syarat & Ketentuan</Text> dan{' '}
