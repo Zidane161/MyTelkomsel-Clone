@@ -2,10 +2,10 @@ import { useRef, useState } from 'react';
 import { ScrollView } from 'react-native';
 
 export default function useScrollTop(threshold = 200) {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<ScrollView>(null);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
-  const handleScroll = (event) => {
+  const handleScroll = (event: { nativeEvent: { contentOffset: { y: any; }; }; }) => {
     const yOffset = event.nativeEvent.contentOffset.y;
     if (yOffset > threshold) {
       setShowScrollTop(true);
